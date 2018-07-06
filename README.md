@@ -15,7 +15,7 @@ The goal of this application was to use particle systems, a Google Poly object, 
 
 * We have tried removing the fountain with setAttribute.
 * We have tried removing the rain with setAttribute.
-* We have tried using createElement, appendChild, and removeChild to control the fountain and the environment -- however, these elements do not disappear.
+* We have tried using createElement, appendChild, and removeChild to control the fountain and the environment -- however, these elements did not disappear.
 * We have tried making the environment not active, although it still exists and prevents the particle system from running after it is created.
 
 ## Resolved Issues
