@@ -13,12 +13,14 @@ const scene = document.querySelector("a-scene");
 button1.addEventListener('click', e => {
     console.log('add snow');
     if (!snowOn) {
-        particles1.setAttribute('particle-system', 'preset: snow; color: green');
+        // particles1.setAttribute('particle-system', 'preset: snow; color: green');
+        scene.setAttribute('rain', 'color:#ffffff;vector:-1 -2 0;count:10000;opacity: 1;splash:false;width:40;dropHeight:0.1')
         button1.setAttribute('textwrap', 'textAlign: center; x: 75; y: 128; text: No snow');
         snowOn = true;
     }
     else {
-        particles1.setAttribute('particle-system', '');
+        // particles1.setAttribute('particle-system', '');
+        scene.setAttribute('rain', '');
         button1.setAttribute('textwrap', 'textAlign: center; x: 75; y: 128; text: Snow');
         snowOn = false;
     }
@@ -30,7 +32,7 @@ button2.addEventListener('click', e => {
     if (!fountainOn) {
         let particles2 = document.createElement('a-entity');
         particles2.setAttribute('particle-system', 'color: #000000,#00CCFF');
-                particles2.setAttribute('id', 'particles2');
+        particles2.setAttribute('id', 'particles2');
         button2.setAttribute('textwrap', 'textAlign: center; x: 75; y: 128; text: No fountain');
         scene.appendChild(particles2);
         fountainOn = true;
@@ -39,9 +41,12 @@ button2.addEventListener('click', e => {
         let particles2 = document.querySelector("#particles2");
         particles2.setAttribute('visible', false);
         scene.removeChild(particles2);
+        button2.setAttribute('textwrap', 'textAlign: center; x: 75; y: 128; text: Fountain');
 
+console.log(scene);
         fountainOn = false;
     }
+    console.log(scene);
 
 });
 
