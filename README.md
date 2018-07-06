@@ -9,6 +9,7 @@ The goal of this application was to use particle systems, a Google Poly object, 
 * The snow and fountain do not turn off.
 * The fountain particle system does not display at the same time as the environment. It creates many errors in the JavaScript console.
 * When the environment is turned off, the pink background remains.
+* The Google Poly block needed to be uploaded as an .obj and could not be directly linked.
 
 ## Attempted Fixes
 
