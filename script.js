@@ -3,11 +3,12 @@ const button2 = document.querySelector("#weather2");
 const button3 = document.querySelector("#weather3");
 let snowOn = false;
 let fountainOn = false;
+let worldOn = false;
 
 const particles1 = document.querySelector("#particles1");
 const particles2 = document.querySelector("#particles2");
 
-const world = document.querySelector("#world");
+const scene = document.querySelector("a-scene");
 
 button1.addEventListener('click', e => {
     console.log('add snow');
@@ -40,6 +41,18 @@ button2.addEventListener('click', e => {
 });
 
 button3.addEventListener('click', e => {
-    console.log('world');
-    world.setAttribute('environment', 'preset: dream');
+    if (!worldOn) {
+        let world = document.createElement("a-entity");
+        world.setAttribute('id', 'world');
+        world.setAttribute('environment', 'preset: dream');
+        scene.appendChild(world);
+        worldOn = true;
+        console.log('world on');
+    } else {
+        let world = document.querySelector("#world");
+        scene.removeChild(world);
+        document.querySelector("a-sky").setAttribute('color', 'black');
+        worldOn = false;
+        console.log('world off');
+    }
 });
