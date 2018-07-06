@@ -24,7 +24,7 @@ button1.addEventListener('click', e => {
         scene.setAttribute('rain', '');
         button1.setAttribute('color', '#bbb');
         button1.setAttribute('draw', 'background: #bbb');
-        button1.setAttribute('textwrap', 'textAlign: center; x: 75; y: 128; text: Snow');
+        button1.setAttribute('textwrap', 'textAlign: center; color: black; x: 75; y: 128; text: Snow');
         snowOn = false;
     }
 
@@ -48,7 +48,7 @@ button2.addEventListener('click', e => {
         scene.removeChild(particles2);
         button2.setAttribute('color', '#bbb');
         button2.setAttribute('draw', 'background: #bbb');
-        button2.setAttribute('textwrap', 'textAlign: center; x: 75; y: 128; text: Fountain');
+        button2.setAttribute('textwrap', 'textAlign: center; color: black; x: 75; y: 128; text: Fountain');
 
 console.log(scene);
         fountainOn = false;
@@ -65,7 +65,7 @@ button3.addEventListener('click', e => {
         scene.appendChild(world);
         button3.setAttribute('color', 'blue');
         button3.setAttribute('draw', 'background: #103680');
-        button3.setAttribute('textwrap', 'color: white; textAlign: center; x: 75; y: 128; text: No world');
+        button3.setAttribute('textwrap', 'textAlign: center; color: white; x: 75; y: 128; text: No world');
         worldOn = true;
         console.log('world on');
     }
@@ -75,7 +75,7 @@ button3.addEventListener('click', e => {
         document.querySelector("a-sky").setAttribute('color', 'black');
         button3.setAttribute('color', '#bbb');
         button3.setAttribute('draw', 'background: #bbb');
-        button3.setAttribute('textwrap', 'textAlign: center; x: 75; y: 128; text: World');
+        button3.setAttribute('textwrap', 'textAlign: center; color: black; x: 75; y: 128; text: World');
         worldOn = false;
         console.log('world off');
     }
