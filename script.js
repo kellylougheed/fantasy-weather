@@ -37,6 +37,7 @@ button2.addEventListener('click', e => {
     }
     else {
         let particles2 = document.querySelector("#particles2");
+        particles2.setAttribute('visible', false);
         scene.removeChild(particles2);
 
         fountainOn = false;
