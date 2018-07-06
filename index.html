@@ -12,18 +12,17 @@
 
 <body>
     <a-scene>
-        <!--<a-sky color="black"></a-sky>-->
+        <a-sky color="black"></a-sky>
         <!--<a-entity environment="preset: arches; groundColor: #a87d6f; groundTexture: none"></a-entity>-->
-        <a-entity environment="preset: dream"></a-entity>
-        <a-entity id="particles1" position="0 2.25 -15"></a-entity>
-        <!--<a-entity id="particles2" position="0 2 -5"></a-entity>-->
-         <a-entity id="particles2" position="0 2 -5" particle-system="color: #EF0000,#44CC00"></a-entity>
+        <a-entity id="world"></a-entity>
+        <a-entity id="particles" position="0 2.25 -15"></a-entity>
 
         <a-entity id="defaultLight1" light="type: ambient; color: #BBB"></a-entity>
         <a-entity id="defaultLight2" light="type: directional; color: #FFF; intensity: .2" position="-0.5 1 1"></a-entity>
 
         <a-sphere id="weather1" color="grey" position="0 0 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 50; y: 128; text: Hello world!"></a-sphere>
-        <a-sphere id="weather2" color="green" position="2 0 -5" radius=".5" draw="background: green" textwrap="textAlign: center; x: 50; y: 128; text: Hello world!"></a-sphere>
+        <a-sphere id="weather2" color="grey" position="2 0 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 50; y: 128; text: Hello world!"></a-sphere>
+        <a-sphere id="weather3" color="grey" position="-2 0 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 50; y: 128; text: Hello world!"></a-sphere>
 
         <a-camera>
             <a-cursor position="0 -1 0" color="white"></a-cursor>
