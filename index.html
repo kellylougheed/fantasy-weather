@@ -4,42 +4,56 @@
 <head>
     <title>Fantasy Weather</title>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    
+        <!--particle systems-->
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+   
+    <!--preset dream environment-->
     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    
+    <!--for text-wrapping-->
     <script src="aframe-draw-component.min.js"></script>
     <script src="aframe-textwrap-component.min.js"></script>
-    <!--<script src="https://cdn.rawgit.com/archilogic-com/aframe-gblock/6498b71d/dist/gblock.js"></script>-->
+    
+    <!--for island-->
+    <script src="https://cdn.rawgit.com/archilogic-com/aframe-gblock/6498b71d/dist/gblock.js"></script>
+   
+    <!--rain-->
     <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
+    
+
 </head>
 
 <body>
     <!--<a-scene rain="color:#ffffff;vector:-1 -2 0;count:500;opacity: 1;splash:false;width:40;dropHeight:0.1">-->
     <a-scene>
-        <a-asset-item id="islandobj" src="WinterIslandv2.obj"></a-asset-item>
-            <a-asset-item id="islandmtl" src="WinterIslandv2.mtl"></a-asset-item>
-            </a-assets>
+        <!--<a-asset-item id="islandobj" src="WinterIslandv2.obj"></a-asset-item>-->
+        <!--<a-asset-item id="islandmtl" src="WinterIslandv2.mtl"></a-asset-item>-->
+        <!--</a-assets>-->
 
-            <a-sky color="black"></a-sky>
-            <!--<a-entity environment="preset: arches; groundColor: #a87d6f; groundTexture: none"></a-entity>-->
-            <a-entity id="particles1" position="0 2.25 -15"></a-entity>
-            <a-entity id="particles2" position="0 2.25 -15"></a-entity>
+        <a-sky color="black"></a-sky>
+        <a-entity id="world" environment="preset: dream; fog:0; active: false"></a-entity>
+        <!--    <a-entity id="particles1" position="0 2 -15"></a-entity>-->
+        <a-entity id="particles2" position="0 3 -2" particle-system="color: #EF0000,#44CC00; enabled: false"></a-entity>
 
-            <a-entity id="defaultLight1" light="type: ambient; color: #BBB"></a-entity>
-            <a-entity id="defaultLight2" light="type: directional; color: #FFF; intensity: .2" position="-0.5 1 1"></a-entity>
+        <a-entity id="defaultLight1" light="type: ambient; color: #BBB"></a-entity>
+        <a-entity id="defaultLight2" light="type: directional; color: #FFF; intensity: .2" position="-0.5 1 1"></a-entity>
 
-            <!--<a-entity gblock="https://poly.google.com/view/7MZsi08V8NW" position="0 0 -10" color="yellow">-->
-            <!--</a-entity>-->
-            <a-obj-model id="island" src="#islandobj" mtl="#islandmtl" position="0 -5 -12">
-                <a-animation attribute="rotation" dur="20000" from="0 0 0" to="0 360 0" repeat="indefinite" delay="0" easing="linear"></a-animation>
-            </a-obj-model>
+        <!--<a-entity gblock="https://poly.google.com/view/7MZsi08V8NW" position="0 0 -10" color="yellow">-->
+        <!--</a-entity>-->
+         <a-entity gblock="https://poly.google.com/view/6RkbU_njz0Y" position="-1 -2 -4"></a-entity>
+        
+        <!--<a-obj-model id="island" src="#islandobj" mtl="#islandmtl" position="0 -5 -12">-->
+            <!--<a-animation attribute="rotation" dur="20000" from="0 0 0" to="0 360 0" repeat="indefinite" delay="0" easing="linear"></a-animation>
+        </a-obj-model>-->
 
-            <a-sphere id="weather1" color="grey" position="0 0 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 65; y: 128; text: Snow"></a-sphere>
-            <a-sphere id="weather2" color="grey" position="2 0 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 50; y: 128; text: Fountain"></a-sphere>
-            <a-sphere id="weather3" color="grey" position="-2 0 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 75; y: 128; text: World"></a-sphere>
+        <a-sphere id="weather1" color="grey" position="0 3 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 65; y: 128; text: Snow"></a-sphere>
+        <a-sphere id="weather2" color="grey" position="2 3 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 50; y: 128; text: Fountain"></a-sphere>
+        <a-sphere id="weather3" color="grey" position="-2 3 -5" radius=".5" draw="background: #bbb" textwrap="textAlign: center; x: 75; y: 128; text: World"></a-sphere>
 
-            <a-camera>
-                <a-cursor position="0 -1 0" color="white"></a-cursor>
-            </a-camera>
+        <a-camera position="0 2 1">
+            <a-cursor position="0 3 0" color="cyan"></a-cursor>
+        </a-camera>
     </a-scene>
 
     <script src="script.js"></script>

@@ -5,9 +5,11 @@ let snowOn = false;
 let fountainOn = false;
 let worldOn = false;
 
-const particles1 = document.querySelector("#particles1");
-
 const scene = document.querySelector("a-scene");
+// const world = document.querySelector('#world');
+const fountain = document.querySelector('#particles2');
+
+const particles1 = document.querySelector("#particles1");
 
 button1.addEventListener('click', e => {
     console.log('add snow');
@@ -33,24 +35,17 @@ button1.addEventListener('click', e => {
 button2.addEventListener('click', e => {
     console.log('add spray');
     if (!fountainOn) {
-        let particles2 = document.createElement('a-entity');
-        particles2.setAttribute('particle-system', 'color: #000000,#00CCFF');
-        particles2.setAttribute('id', 'particles2');
+        fountain.setAttribute('particle-system', 'color: #EF0000,#44CC0F;enabled: true');
         button2.setAttribute('color', 'blue');
         button2.setAttribute('draw', 'background: #103680');
         button2.setAttribute('textwrap', 'textAlign: center; color: white; x: 75; y: 128; text: No fountain');
-        scene.appendChild(particles2);
         fountainOn = true;
     }
     else {
-        let particles2 = document.querySelector("#particles2");
-        particles2.setAttribute('visible', false);
-        scene.removeChild(particles2);
+        fountain.setAttribute('particle-system', 'color: #EF0000,#44CC00; enabled: false');
         button2.setAttribute('color', '#bbb');
         button2.setAttribute('draw', 'background: #bbb');
         button2.setAttribute('textwrap', 'textAlign: center; color: black; x: 75; y: 128; text: Fountain');
-
-console.log(scene);
         fountainOn = false;
     }
     console.log(scene);
@@ -58,11 +53,9 @@ console.log(scene);
 });
 
 button3.addEventListener('click', e => {
+    let sky = document.querySelector('a-sky');
     if (!worldOn) {
-        let world = document.createElement("a-entity");
-        world.setAttribute('id', 'world');
-        world.setAttribute('environment', 'preset: dream');
-        scene.appendChild(world);
+        world.setAttribute('environment', 'preset: dream; fog:0; active: true');
         button3.setAttribute('color', 'blue');
         button3.setAttribute('draw', 'background: #103680');
         button3.setAttribute('textwrap', 'textAlign: center; color: white; x: 75; y: 128; text: No world');
@@ -70,13 +63,12 @@ button3.addEventListener('click', e => {
         console.log('world on');
     }
     else {
-        let world = document.querySelector("#world");
-        scene.removeChild(world);
-        document.querySelector("a-sky").setAttribute('color', 'black');
+        world.setAttribute('environment', 'preset: dream; fog:0; active: false');
         button3.setAttribute('color', '#bbb');
         button3.setAttribute('draw', 'background: #bbb');
         button3.setAttribute('textwrap', 'textAlign: center; color: black; x: 75; y: 128; text: World');
         worldOn = false;
         console.log('world off');
     }
+    console.log(sky);
 });
